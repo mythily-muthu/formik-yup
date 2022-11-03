@@ -52,7 +52,7 @@ function App() {
 
 
   return (
-    <div className="container">
+    <div className="container  sign_up_form_container" >
       <div className='row'>
         <div className='col-lg-12'>
 
@@ -81,7 +81,7 @@ function App() {
                         type="text"
                         value={values.firstName}
                         placeholder="FirstName"
-                        className={`mb-3 mt-2 form-control ${touched.firstName && errors.firstName ? "is-invalid" : ""}`}
+                        className={`mb-3 mt-2 form-control w-75 ${touched.firstName && errors.firstName ? "is-invalid" : ""}`}
 
                       />
                       <ErrorMessage name='firstName' />
@@ -131,7 +131,7 @@ function App() {
 
 
                     <div className='Form-group'>
-                      <label htmlFor='Password'>Password</label>
+                      <label htmlFor='Password' >Password</label>
                       <Field
                         name="password"
                         type="password"
@@ -140,7 +140,9 @@ function App() {
                         className={`mb-3 mt-2 form-control
                         ${touched.password && errors.password && "is-invalid"}`}
                       />
-                      <ErrorMessage name='password' />
+                      <span className='text-danger'>
+                        <ErrorMessage name='password' />
+                      </span>
                     </div>
 
 
@@ -156,7 +158,7 @@ function App() {
                       <ErrorMessage name='confirmPassword' />
                     </div>
 
-                    <div className='mt-4' >
+                    <div className='mt-4 d-flex justify-content-center' >
                       <button
                         type='submit'
                         className='btn btn-info'>Sign Up</button>
@@ -176,4 +178,5 @@ function App() {
   );
 }
 
-export default App;
+export default App
+
